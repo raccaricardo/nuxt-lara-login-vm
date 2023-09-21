@@ -62,6 +62,7 @@ declare module '#app' {
 
 interface PluginInjection {
   $laraAuth: NuxtLaraLoginVmPlugin
+  $csrf: Csrf
   $apiFetch: ApiFetch  
 }
 
