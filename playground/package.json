@@ -1,4 +1,5 @@
 {
   "private": true,
-  "name": "nuxt-lara-login-vm"
+  "name": "nuxt-lara-login-vm",
+  "version": "0.0.1"
 }
