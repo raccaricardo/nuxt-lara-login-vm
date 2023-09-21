@@ -1,0 +1,56 @@
+{
+  "name": "my-module",
+  "version": "0.0.1",
+  "description": "My new Nuxt module",
+  "repository": "your-org/my-module",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.7.3",
+    "ofetch": "^1.3.3"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/module-builder": "latest",
+    "@nuxt/schema": "^3.7.3",
+    "@nuxt/test-utils": "^3.7.3",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@types/node": "^18.17.17",
+    "changelogen": "^0.5.5",
+    "nuxt": "^3.7.3"
+  },
+  "description": "Paquete para utilizar con Laravel Sanctum y Nuxt3. Version Beta(no ssr).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raccaricardo/nuxt-lara-login-vm.git"
+  },
+  "keywords": [
+    "nuxt3",
+    "villa maria",
+    "typescript",
+    "laravel",
+    "sanctum",
+    "auth",
+    "nuxt"
+  ],
+  "author": "Ricardo Racca <ricardoemanuelracca@gmail.com>",
+  "homepage": "https://github.com/raccaricardo/nuxt-lara-login-vm#readme"
+}
