@@ -12,7 +12,13 @@ const defaults: ModuleOptions = {
   endpoints: {
     login: '/login',
     logout: '/logout',
-    user: '/user'
+    user: '/user',
+    csrf: '/sanctum/csrf-cookie'
+  },
+  csrf: {
+    headerKey: 'X-XSRF-TOKEN',
+    cookieKey: 'XSRF-TOKEN',
+    tokenCookieKey: 'nuxt-sanctum-auth-token'
   },
   redirects: {
     home: '/',
