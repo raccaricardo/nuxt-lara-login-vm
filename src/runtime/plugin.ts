@@ -89,12 +89,13 @@ export default defineNuxtPlugin(async () => {
       }
 
       if(!config.endpoints.user && config.endpoints.user!=''){
+        auth.value.user = null
         console.log('endpoints.user no definido')
-        return null
+        return auth.value.user as T
       }
 
       const user = await apiFetch(config.endpoints.user)
-      
+
       if (user) {
         auth.value.loggedIn = true
         auth.value.user = user
