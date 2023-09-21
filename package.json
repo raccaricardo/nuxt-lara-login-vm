@@ -1,8 +1,6 @@
 {
-  "name": "my-module",
+  "name": "nuxt-lara-login-vm",
   "version": "0.0.1",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
   "license": "MIT",
   "type": "module",
   "exports": {
