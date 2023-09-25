@@ -20,14 +20,17 @@ export default defineNuxtPlugin(async () => {
 
   const config: ModuleOptions = useRuntimeConfig().public.nuxtLaraLoginVm
 
-  addRouteMiddleware('auth', async () => {
+  addRouteMiddleware('auth', async ({from, to}) => {    
     if (config.token) {
       getToken()
     }
     await getUser()
-
-    if (auth.value.loggedIn === false) {
+    
+    if (auth.value.loggedIn === false ) {
       return config.redirects.login
+    }
+    if (auth.value.loggedIn === true && to?.name === 'login' ) {
+      return config.redirects.home
     }
   })
 
